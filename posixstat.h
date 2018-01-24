@@ -78,30 +78,44 @@
 
 #if defined (S_IFBLK) && !defined (S_ISBLK)
 #define	S_ISBLK(m)	(((m)&S_IFMT) == S_IFBLK)	/* block device */
+#elif !defined (S_IFBLK)
+#define S_ISBLK(m)	0
 #endif
 
 #if defined (S_IFCHR) && !defined (S_ISCHR)
 #define	S_ISCHR(m)	(((m)&S_IFMT) == S_IFCHR)	/* character device */
+#elif !defined (S_IFCHR)
+#define S_ISCHR(m)	0
 #endif
 
 #if defined (S_IFDIR) && !defined (S_ISDIR)
 #define	S_ISDIR(m)	(((m)&S_IFMT) == S_IFDIR)	/* directory */
+#elif !defined (S_IFDIR)
+#define S_ISDIR(m)	0
 #endif
 
 #if defined (S_IFREG) && !defined (S_ISREG)
 #define	S_ISREG(m)	(((m)&S_IFMT) == S_IFREG)	/* file */
+#elif !defined (S_IFREG)
+#define S_ISREG(m)	0
 #endif
 
 #if defined (S_IFIFO) && !defined (S_ISFIFO)
 #define	S_ISFIFO(m)	(((m)&S_IFMT) == S_IFIFO)	/* fifo - named pipe */
+#elif !defined (S_IFIFO)
+#define S_ISFIFO(m)	0
 #endif
 
 #if defined (S_IFLNK) && !defined (S_ISLNK)
 #define	S_ISLNK(m)	(((m)&S_IFMT) == S_IFLNK)	/* symbolic link */
+#elif !defined (S_IFLNK)
+#define S_ISLNK(m)	0
 #endif
 
 #if defined (S_IFSOCK) && !defined (S_ISSOCK)
 #define	S_ISSOCK(m)	(((m)&S_IFMT) == S_IFSOCK)	/* socket */
+#elif !defined (S_IFSOCK)
+#define S_ISSOCK(m)	0
 #endif
 
 /*
@@ -137,6 +151,8 @@
 /* These are non-standard, but are used in builtins.c$symbolic_umask() */
 #define S_IRUGO		(S_IRUSR | S_IRGRP | S_IROTH)
 #define S_IWUGO		(S_IWUSR | S_IWGRP | S_IWOTH)
+#if defined(S_IXUSR) && defined(S_IXGRP) && defined(S_IXOTH)
 #define S_IXUGO		(S_IXUSR | S_IXGRP | S_IXOTH)
+#endif
 
 #endif /* _POSIXSTAT_H_ */

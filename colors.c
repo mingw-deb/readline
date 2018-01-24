@@ -183,14 +183,22 @@ _rl_print_color_indicator (const char *f)
         {
           colored_filetype = C_FILE;
 
+#if defined (S_ISUID)
           if ((mode & S_ISUID) != 0 && is_colored (C_SETUID))
             colored_filetype = C_SETUID;
-          else if ((mode & S_ISGID) != 0 && is_colored (C_SETGID))
+          else
+#endif
+#if defined (S_ISGID)
+          if ((mode & S_ISGID) != 0 && is_colored (C_SETGID))
             colored_filetype = C_SETGID;
-          else if (is_colored (C_CAP) && 0) //f->has_capability)
+          else
+#endif
+          if (is_colored (C_CAP) && 0) //f->has_capability)
             colored_filetype = C_CAP;
+#if defined(S_IXUGO)
           else if ((mode & S_IXUGO) != 0 && is_colored (C_EXEC))
             colored_filetype = C_EXEC;
+#endif
           else if ((1 < astat.st_nlink) && is_colored (C_MULTIHARDLINK))
             colored_filetype = C_MULTIHARDLINK;
         }
@@ -204,8 +212,10 @@ _rl_print_color_indicator (const char *f)
             colored_filetype = C_STICKY_OTHER_WRITABLE;
           else
 #endif
+#if defined (S_IWOTH)
           if ((mode & S_IWOTH) != 0 && is_colored (C_OTHER_WRITABLE))
             colored_filetype = C_OTHER_WRITABLE;
+#endif
 #if defined (S_ISVTX)
           else if ((mode & S_ISVTX) != 0 && is_colored (C_STICKY))
             colored_filetype = C_STICKY;

@@ -96,7 +96,7 @@ enum indicator_no
   };
 
 
-#if !S_IXUGO
+#if !S_IXUGO && defined(S_IXUSR) && defined(S_IXGRP) && defined(S_IXOTH)
 # define S_IXUGO (S_IXUSR | S_IXGRP | S_IXOTH)
 #endif
 
