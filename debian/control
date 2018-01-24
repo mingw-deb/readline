@@ -2,21 +2,21 @@ Source: mingw-w64-readline
 Priority: optional
 Maintainer: Tobias Schlemmer <keinstein@users.berlios.de>
 Build-Depends: debhelper (>= 9), autotools-dev
-Standards-Version: 3.9.8
+Standards-Version: 4.1.1
 Section: libs
-Homepage: <insert the upstream URL, if relevant>
+Homepage: https://tiswww.case.edu/php/chet/readline/rltop.html
 #Vcs-Git: https://anonscm.debian.org/collab-maint/mingw-w64-readline.git
 #Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/mingw-w64-readline.git
 
-Package: mingw-w64-readline-dev
+Package: libreadline-mingw-w64-dev
 Section: libdevel
 Architecture: any
 Depends: mingw-w64-readlineBROKEN (= ${binary:Version}), ${misc:Depends}
-Description: <insert up to 60 chars description>
+Description: MinGW port of readline for editing typed command lines (mingw-w64, development files)
  <insert long description, indented with spaces>
 
-Package: mingw-w64-readlineBROKEN
+Package: libreadline1-mingw-w64
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
+Description: MinGW port of readline for editing typed command lines (mingw-w64, runtime)
  <insert long description, indented with spaces>

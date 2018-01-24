@@ -1,38 +1,68 @@
-Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: mingw-w64-readline
-Source: <url://example.com>
+This is Debian GNU/Linux's prepackaged version of the FSF's GNU
+Readline library.
 
-Files: *
-Copyright: <years> <put author's name and email here>
-           <years> <likewise for another author>
-License: <special license>
- <Put the license of the package here indented by 1 space>
- <This follows the format of Description: lines in control file>
- .
- <Including paragraphs>
+This package was put together by Tobias Schlemmer <keinstein@users.sourceforge.net>, derived
+from the arch linux  package by pingplug <pingplug@foxmail.com>, from the GNU sources at
 
-# If you want to use GPL v2 or later for the /debian/* files use 
-# the following clauses, or change it to suit. Delete these two lines
-Files: debian/*
-Copyright: 2018 Tobias Schlemmer <keinstein@users.berlios.de>
-License: GPL-2+
- This package is free software; you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation; either version 2 of the License, or
- (at your option) any later version.
- .
- This package is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- .
- You should have received a copy of the GNU General Public License
- along with this program. If not, see <https://www.gnu.org/licenses/>
- .
- On Debian systems, the complete text of the GNU General
- Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+	ftp.gnu.org:/pub/gnu/readline/readline-7.0.tar.gz.
 
-# Please also look if there are files or directories which have a
-# different copyright/license attached and list them here.
-# Please avoid picking licenses with terms that are more restrictive than the
-# packaged work, as it may make Debian's contributions unacceptable upstream.
+Upstream Authors:
+
+    Chet Ramey <chet.ramey@case.edu>
+    Jeff Solomon <jsolomon@stanford.edu> (examples/excallback.c)
+    Harold Levy <Harold.Levy@synopsys.com> (examples/rl-fgets.c)
+    Juergen Weigert <jnweiger@immd4.informatik.uni-erlangen.de> (examples/rlfe)
+    Michael Schroeder <mlschroe@immd4.informatik.uni-erlangen.de> (examples/rlfe)
+    Oliver Laumann (examples/rlfe)
+
+Copyright:
+
+    Copyright (C) 1987-2009 Free Software Foundation, Inc.
+    Copyright (C) 1999 Jeff Solomon (examples/excallback.c)
+    Copyright (C) 2003-2004 Harold Levy (examples/rl-fgets.c)
+    Copyright (C) 1993-2002 Juergen Weigert (examples/rlfe)
+    Copyright (C) 1993-2002 Michael Schroeder (examples/rlfe)
+    Copyright (C) 1987 Oliver Laumann (examples/rlfe)
+
+License:
+
+    Readline is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This package is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Readline.  If not, see <http://www.gnu.org/licenses/>.
+
+    examples/rl-fgets.c: GPL v2 or later.
+    examples/rlfe: GPL v2 or later.
+
+On Debian systems, the complete text of the GNU General Public License
+can be found in `/usr/share/common-licenses/GPL-3'.
+
+The documentation files doc/*.texi and derived .info, .html, .ps and .pdf
+files are:
+
+    Copyright (C) 1988-2015 Free Software Foundation, Inc.
+
+    Permission is granted to copy, distribute and/or modify this
+    document under the terms of the GNU Free Documentation License,
+    Version 1.3 or any later version published by the Free Software
+    Foundation; with no Invariant Sections, no Front-Cover Texts, and
+    no Back-Cover Texts.  A copy of the license is included in the
+    section entitled "GNU Free Documentation License".
+			      
+On Debian systems, the complete text of the GNU Free Documentation License
+can be found in `/usr/share/common-licenses/GFDL'.
+
+The Debian packaging is:
+
+    Copyright (C) 1999-2009 Matthias Klose <doko@debian.org>
+
+and is licensed under the GPL version 3, 
+see `/usr/share/common-licenses/GPL-3'.
