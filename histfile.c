@@ -610,8 +610,6 @@ history_truncate_file (fname, lines)
      user is running this, it's a no-op.  If the shell is running after sudo
      with a shared history file, we don't want to leave the history file
      owned by root. */
-  if (rv == 0 && exists)
-    r = chown (filename, finfo.st_uid, finfo.st_gid);
 
   xfree (filename);
   FREE (tempname);
@@ -757,8 +755,6 @@ mmap_error:
      user is running this, it's a no-op.  If the shell is running after sudo
      with a shared history file, we don't want to leave the history file
      owned by root. */
-  if (rv == 0 && exists)
-    mode = chown (histname, finfo.st_uid, finfo.st_gid);
 
   FREE (histname);
   FREE (tempname);
